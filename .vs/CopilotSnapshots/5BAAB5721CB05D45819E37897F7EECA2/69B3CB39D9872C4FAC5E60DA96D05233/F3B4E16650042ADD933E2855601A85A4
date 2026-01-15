@@ -1,0 +1,79 @@
+﻿using Cagnotte.Data;
+using Cagnotte.Data.Repositories;
+using Cagnotte.Services;
+using Microsoft.EntityFrameworkCore;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+// Configuration CORS pour permettre l'accès depuis Blazor WebAssembly
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowBlazorClient", policy =>
+    {
+        policy.WithOrigins(
+                "https://localhost:7144",  // Port HTTPS du frontend Blazor
+                "http://localhost:5207",   // Port HTTP du frontend Blazor
+                "https://localhost:5001", 
+                "http://localhost:5000", 
+                "https://localhost:7001")
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
+// DbContext
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// AutoMapper
+builder.Services.AddAutoMapper(typeof(Program));
+
+// Repositories
+builder.Services.AddScoped<ICagnotteRepository, CagnotteRepository>();
+builder.Services.AddScoped<IEntrepriseRepository, EntrepriseRepository>();
+builder.Services.AddScoped<IParticipantRepository, ParticipantRepository>();
+builder.Services.AddScoped<IParticipationRepository, ParticipationRepository>();
+
+// Services
+builder.Services.AddScoped<ICagnotteService, CagnotteService>();
+builder.Services.AddScoped<IEntrepriseService, EntrepriseService>();
+builder.Services.AddScoped<IParticipantService, ParticipantService>();
+builder.Services.AddScoped<IParticipationService, ParticipationService>();
+
+var app = builder.Build();
+
+// Appliquer les migrations automatiquement au démarrage
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<AppDbContext>();
+        context.Database.Migrate();
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "Une erreur s'est produite lors de l'application des migrations.");
+    }
+}
+
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Cagnotte API v1");
+    c.RoutePrefix = string.Empty; // Swagger à la racine (https://localhost:xxxx/)
+});
+
+// Activer CORS avant UseAuthorization
+app.UseCors("AllowBlazorClient");
+
+app.UseHttpsRedirection();
+app.UseAuthorization();
+app.MapControllers();
+app.Run();

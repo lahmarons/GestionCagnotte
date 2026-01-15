@@ -1,0 +1,45 @@
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Services\bin\Debug\net8.0\Cagnotte.Services.deps.json
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Services\bin\Debug\net8.0\Cagnotte.Services.dll
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Services\bin\Debug\net8.0\Cagnotte.Services.pdb
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.AssemblyInfoInputs.cache
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.AssemblyInfo.cs
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.csproj.CoreCompileInputs.cache
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.dll
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Services\obj\Debug\net8.0\refint\Cagnotte.Services.dll
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.pdb
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Services\obj\Debug\net8.0\ref\Cagnotte.Services.dll
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Services\bin\Debug\net8.0\Cagnotte.Services.deps.json
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Services\bin\Debug\net8.0\Cagnotte.Services.dll
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Services\bin\Debug\net8.0\Cagnotte.Services.pdb
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Services\bin\Debug\net8.0\Cagnotte.Data.dll
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Services\bin\Debug\net8.0\Cagnotte.Domain.dll
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Services\bin\Debug\net8.0\Cagnotte.Data.pdb
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Services\bin\Debug\net8.0\Cagnotte.Domain.pdb
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.csproj.AssemblyReference.cache
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.AssemblyInfoInputs.cache
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.AssemblyInfo.cs
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.csproj.CoreCompileInputs.cache
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.3D886766.Up2Date
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.dll
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\refint\Cagnotte.Services.dll
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.pdb
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\ref\Cagnotte.Services.dll
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Services\bin\Debug\net8.0\Cagnotte.Services.deps.json
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Services\bin\Debug\net8.0\Cagnotte.Services.dll
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Services\bin\Debug\net8.0\Cagnotte.Services.pdb
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Services\bin\Debug\net8.0\Cagnotte.Data.dll
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Services\bin\Debug\net8.0\Cagnotte.Domain.dll
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Services\bin\Debug\net8.0\Cagnotte.Data.pdb
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Services\bin\Debug\net8.0\Cagnotte.Domain.pdb
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.csproj.AssemblyReference.cache
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.AssemblyInfoInputs.cache
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.AssemblyInfo.cs
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.csproj.CoreCompileInputs.cache
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.3D886766.Up2Date
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.dll
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\refint\Cagnotte.Services.dll
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\Cagnotte.Services.pdb
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Services\obj\Debug\net8.0\ref\Cagnotte.Services.dll

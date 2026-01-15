@@ -1,0 +1,259 @@
+﻿@page "/cagnotte/{Id:int}"
+@inject CagnotteService CagnotteService
+@inject NavigationManager Navigation
+
+<PageTitle>Détails de la cagnotte</PageTitle>
+
+<div class="container mt-4">
+    @if (isLoading)
+    {
+        <div class="text-center">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Chargement...</span>
+            </div>
+            <p class="mt-2">Chargement des détails...</p>
+        </div>
+    }
+    else if (cagnotte == null)
+    {
+        <div class="alert alert-danger">
+            <i class="bi bi-exclamation-triangle"></i> Cagnotte introuvable
+        </div>
+        <button class="btn btn-secondary" @onclick="GoBack">
+            <i class="bi bi-arrow-left"></i> Retour
+        </button>
+    }
+    else
+    {
+        <div class="row">
+            <!-- Détails de la cagnotte -->
+            <div class="col-lg-8">
+                <div class="card shadow mb-4">
+                    <div class="card-body">
+                        <h1 class="card-title text-primary">🎁 @cagnotte.Titre</h1>
+                        <p class="text-muted fs-5">@cagnotte.Description</p>
+
+                        <div class="my-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <h3 class="text-success">@cagnotte.MontantCollecte.ToString("C")</h3>
+                                <span class="text-muted fs-5">sur @cagnotte.MontantObjectif.ToString("C")</span>
+                            </div>
+                            <div class="progress" style="height: 35px;">
+                                <div class="progress-bar @GetProgressBarClass()" 
+                                     role="progressbar" 
+                                     style="width: @GetPercentage()%">
+                                    <strong>@GetPercentage()%</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <p><i class="bi bi-person-circle"></i> <strong>Organisateur:</strong> @cagnotte.Organisateur</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><i class="bi bi-calendar-event"></i> <strong>Date limite:</strong> @cagnotte.DateLimite.ToString("dd/MM/yyyy")</p>
+                            </div>
+                        </div>
+
+                        @if (cagnotte.EstActive)
+                        {
+                            <div class="card bg-light border-primary">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0">💰 Contribuer à cette cagnotte</h5>
+                                </div>
+                                <div class="card-body">
+                                    <EditForm Model="contributionRequest" OnValidSubmit="HandleContribution">
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold">Votre nom *</label>
+                                            <InputText class="form-control" @bind-Value="contributionRequest.NomContributeur" 
+                                                     placeholder="Entrez votre nom" />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold">Montant (€) *</label>
+                                            <InputNumber class="form-control" @bind-Value="contributionRequest.Montant" 
+                                                       placeholder="Ex: 20.00" />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold">Message (optionnel)</label>
+                                            <InputTextArea class="form-control" rows="3" @bind-Value="contributionRequest.Message" 
+                                                         placeholder="Ajoutez un petit mot..." />
+                                        </div>
+
+                                        @if (!string.IsNullOrEmpty(errorMessage))
+                                        {
+                                            <div class="alert alert-danger">
+                                                <i class="bi bi-exclamation-triangle"></i> @errorMessage
+                                            </div>
+                                        }
+
+                                        @if (!string.IsNullOrEmpty(successMessage))
+                                        {
+                                            <div class="alert alert-success">
+                                                <i class="bi bi-check-circle"></i> @successMessage
+                                            </div>
+                                        }
+
+                                        <button type="submit" class="btn btn-primary btn-lg w-100" disabled="@isSubmittingContribution">
+                                            @if (isSubmittingContribution)
+                                            {
+                                                <span class="spinner-border spinner-border-sm me-2"></span>
+                                            }
+                                            <i class="bi bi-cash"></i> Contribuer maintenant
+                                        </button>
+                                    </EditForm>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="alert alert-warning">
+                                <i class="bi bi-info-circle"></i> Cette cagnotte est terminée et n'accepte plus de contributions.
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <button class="btn btn-secondary" @onclick="GoBack">
+                    <i class="bi bi-arrow-left"></i> Retour à la liste
+                </button>
+            </div>
+
+            <!-- Liste des contributions -->
+            <div class="col-lg-4">
+                <div class="card shadow sticky-top" style="top: 20px;">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">👥 Contributions (@contributions.Count)</h5>
+                    </div>
+                    <div class="card-body" style="max-height: 600px; overflow-y: auto;">
+                        @if (!contributions.Any())
+                        {
+                            <p class="text-muted text-center">Aucune contribution pour le moment. Soyez le premier !</p>
+                        }
+                        else
+                        {
+                            @foreach (var contribution in contributions.OrderByDescending(c => c.DateContribution))
+                            {
+                                <div class="mb-3 pb-3 border-bottom">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <strong class="text-primary">@contribution.NomContributeur</strong>
+                                            @if (!string.IsNullOrEmpty(contribution.Message))
+                                            {
+                                                <p class="text-muted small mb-1 mt-1">💬 "@contribution.Message"</p>
+                                            }
+                                            <small class="text-muted">
+                                                <i class="bi bi-clock"></i> @contribution.DateContribution.ToString("dd/MM/yyyy HH:mm")
+                                            </small>
+                                        </div>
+                                        <span class="badge bg-success fs-6">@contribution.Montant.ToString("C")</span>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private CagnotteDto? cagnotte;
+    private List<ContributionDto> contributions = new();
+    private bool isLoading = true;
+    private bool isSubmittingContribution = false;
+    private string? errorMessage;
+    private string? successMessage;
+
+    private CreateContributionRequest contributionRequest = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData();
+    }
+
+    private async Task LoadData()
+    {
+        isLoading = true;
+        try
+        {
+            cagnotte = await CagnotteService.GetCagnotteByIdAsync(Id);
+            if (cagnotte != null)
+            {
+                contributions = await CagnotteService.GetContributionsAsync(Id);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erreur: {ex.Message}");
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private async Task HandleContribution()
+    {
+        if (string.IsNullOrWhiteSpace(contributionRequest.NomContributeur) || contributionRequest.Montant <= 0)
+        {
+            errorMessage = "Veuillez remplir tous les champs obligatoires.";
+            return;
+        }
+
+        isSubmittingContribution = true;
+        errorMessage = null;
+        successMessage = null;
+
+        try
+        {
+            await CagnotteService.AddContributionAsync(Id, contributionRequest);
+            successMessage = "🎉 Merci pour votre contribution !";
+            
+            // Réinitialiser le formulaire
+            contributionRequest = new();
+            
+            // Recharger les données
+            await LoadData();
+
+            // Effacer le message de succès après 3 secondes
+            await Task.Delay(3000);
+            successMessage = null;
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Erreur lors de l'ajout de la contribution: {ex.Message}";
+        }
+        finally
+        {
+            isSubmittingContribution = false;
+        }
+    }
+
+    private int GetPercentage()
+    {
+        if (cagnotte == null || cagnotte.MontantObjectif == 0) return 0;
+        var percentage = (int)((cagnotte.MontantCollecte / cagnotte.MontantObjectif) * 100);
+        return Math.Min(percentage, 100);
+    }
+
+    private string GetProgressBarClass()
+    {
+        var percentage = GetPercentage();
+        if (percentage >= 100) return "bg-success";
+        if (percentage >= 75) return "bg-info";
+        if (percentage >= 50) return "bg-warning";
+        return "bg-danger";
+    }
+
+    private void GoBack()
+    {
+        Navigation.NavigateTo("/");
+    }
+}

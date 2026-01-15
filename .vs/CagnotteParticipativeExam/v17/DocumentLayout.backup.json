@@ -1,0 +1,582 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{837EF3DE-668C-484C-9D34-200601FF74B3}|Cagnotte.Data\\Cagnotte.Data.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotte.data\\repositories\\cagnotterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{837EF3DE-668C-484C-9D34-200601FF74B3}|Cagnotte.Data\\Cagnotte.Data.csproj|solutionrelative:cagnotte.data\\repositories\\cagnotterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{563F809D-41A7-4116-88AB-214EBD6CEC98}|Cagnotte.Domain\\Cagnotte.Domain.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotte.domain\\enums\\typecagnotte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{563F809D-41A7-4116-88AB-214EBD6CEC98}|Cagnotte.Domain\\Cagnotte.Domain.csproj|solutionrelative:cagnotte.domain\\enums\\typecagnotte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D490F829-2E28-4439-9393-B02F005BDF7E}|Cagnotte.Services\\Cagnotte.Services.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotte.services\\icagnotteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D490F829-2E28-4439-9393-B02F005BDF7E}|Cagnotte.Services\\Cagnotte.Services.csproj|solutionrelative:cagnotte.services\\icagnotteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79742B0F-4C88-4657-A45C-991F14393F03}|CagnotteParticipativeExam\\CagnotteParticipativeExam.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotteparticipativeexam\\explication-complete-prof.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{79742B0F-4C88-4657-A45C-991F14393F03}|CagnotteParticipativeExam\\CagnotteParticipativeExam.csproj|solutionrelative:cagnotteparticipativeexam\\explication-complete-prof.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79742B0F-4C88-4657-A45C-991F14393F03}|CagnotteParticipativeExam\\CagnotteParticipativeExam.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotteparticipativeexam\\controllers\\cagnottecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79742B0F-4C88-4657-A45C-991F14393F03}|CagnotteParticipativeExam\\CagnotteParticipativeExam.csproj|solutionrelative:cagnotteparticipativeexam\\controllers\\cagnottecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Shared\\NavMenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shared\\NavMenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Models\\ContributionDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\ContributionDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Models\\CagnotteDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\CagnotteDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79742B0F-4C88-4657-A45C-991F14393F03}|CagnotteParticipativeExam\\CagnotteParticipativeExam.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotteparticipativeexam\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79742B0F-4C88-4657-A45C-991F14393F03}|CagnotteParticipativeExam\\CagnotteParticipativeExam.csproj|solutionrelative:cagnotteparticipativeexam\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotteparticipative.ui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|solutionrelative:cagnotteparticipative.ui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotteparticipative.ui\\models\\cagnottedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|solutionrelative:cagnotteparticipative.ui\\models\\cagnottedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotteparticipative.ui\\models\\createcagnotterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|solutionrelative:cagnotteparticipative.ui\\models\\createcagnotterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotteparticipative.ui\\models\\createcontributionrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|solutionrelative:cagnotteparticipative.ui\\models\\createcontributionrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotteparticipative.ui\\services\\cagnotteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|solutionrelative:cagnotteparticipative.ui\\services\\cagnotteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotteparticipative.ui\\pages\\cagnottelist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|solutionrelative:cagnotteparticipative.ui\\pages\\cagnottelist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotteparticipative.ui\\pages\\createcagnotte.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|solutionrelative:cagnotteparticipative.ui\\pages\\createcagnotte.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotteparticipative.ui\\pages\\cagnottedetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|solutionrelative:cagnotteparticipative.ui\\pages\\cagnottedetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotteparticipative.ui\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|solutionrelative:cagnotteparticipative.ui\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotteparticipative.ui\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|solutionrelative:cagnotteparticipative.ui\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotteparticipative.ui\\models\\contributiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|solutionrelative:cagnotteparticipative.ui\\models\\contributiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Start-Applications.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Start-Applications.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\README-FRONTEND.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:README-FRONTEND.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotteparticipative.ui\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|solutionrelative:cagnotteparticipative.ui\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotteparticipative.ui\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|solutionrelative:cagnotteparticipative.ui\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\DEMARRAGE-GUIDE.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DEMARRAGE-GUIDE.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotteparticipative.ui\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|solutionrelative:cagnotteparticipative.ui\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotteparticipative.ui\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F784D9DD-95DD-499D-BEA8-812D4EB19B71}|CagnotteParticipative.UI\\CagnotteParticipative.UI.csproj|solutionrelative:cagnotteparticipative.ui\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\AIDE-FRONTEND-PAS-AFFICHE.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AIDE-FRONTEND-PAS-AFFICHE.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Demarrer-Applications.bat||{3B902123-F8A7-4915-9F01-361F908088D0}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Demarrer-Applications.bat||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\LISEZ-MOI-DEMARRAGE.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:LISEZ-MOI-DEMARRAGE.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Demarrer-Tout.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Demarrer-Tout.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\GUIDE-TESTS-COMPLETS.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GUIDE-TESTS-COMPLETS.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79742B0F-4C88-4657-A45C-991F14393F03}|CagnotteParticipativeExam\\CagnotteParticipativeExam.csproj|c:\\users\\lahma\\onedrive\\bureau\\ex s1 4g\\cagnotte-master\\cagnotteparticipativeexam\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{79742B0F-4C88-4657-A45C-991F14393F03}|CagnotteParticipativeExam\\CagnotteParticipativeExam.csproj|solutionrelative:cagnotteparticipativeexam\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Demarrer-Application-FINAL.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Demarrer-Application-FINAL.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\SOLUTION-ULTIME-FRONTEND.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SOLUTION-ULTIME-FRONTEND.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Shared\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Shared\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Shared\\NavMenu.razor",
+              "RelativeToolTip": "Shared\\NavMenu.razor",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAmwBYAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-15T13:57:41.69Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TypeCagnotte.cs",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Cagnotte.Domain\\Enums\\TypeCagnotte.cs",
+              "RelativeDocumentMoniker": "Cagnotte.Domain\\Enums\\TypeCagnotte.cs",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Cagnotte.Domain\\Enums\\TypeCagnotte.cs",
+              "RelativeToolTip": "Cagnotte.Domain\\Enums\\TypeCagnotte.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T13:42:26.553Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CagnotteRepository.cs",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Cagnotte.Data\\Repositories\\CagnotteRepository.cs",
+              "RelativeDocumentMoniker": "Cagnotte.Data\\Repositories\\CagnotteRepository.cs",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Cagnotte.Data\\Repositories\\CagnotteRepository.cs",
+              "RelativeToolTip": "Cagnotte.Data\\Repositories\\CagnotteRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T08:45:02.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ICagnotteService.cs",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Cagnotte.Services\\ICagnotteService.cs",
+              "RelativeDocumentMoniker": "Cagnotte.Services\\ICagnotteService.cs",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Cagnotte.Services\\ICagnotteService.cs",
+              "RelativeToolTip": "Cagnotte.Services\\ICagnotteService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T08:36:03.953Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CagnotteController.cs",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipativeExam\\Controllers\\CagnotteController.cs",
+              "RelativeDocumentMoniker": "CagnotteParticipativeExam\\Controllers\\CagnotteController.cs",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipativeExam\\Controllers\\CagnotteController.cs",
+              "RelativeToolTip": "CagnotteParticipativeExam\\Controllers\\CagnotteController.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T08:28:20.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EXPLICATION-COMPLETE-PROF.md",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipativeExam\\EXPLICATION-COMPLETE-PROF.md",
+              "RelativeDocumentMoniker": "CagnotteParticipativeExam\\EXPLICATION-COMPLETE-PROF.md",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipativeExam\\EXPLICATION-COMPLETE-PROF.md",
+              "RelativeToolTip": "CagnotteParticipativeExam\\EXPLICATION-COMPLETE-PROF.md",
+              "ViewState": "AgIAADgCAAAAAAAAAAAAwFcCAACUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-12-15T21:54:36.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Demarrer-Application-FINAL.ps1",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Demarrer-Application-FINAL.ps1",
+              "RelativeDocumentMoniker": "Demarrer-Application-FINAL.ps1",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Demarrer-Application-FINAL.ps1",
+              "RelativeToolTip": "Demarrer-Application-FINAL.ps1",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-15T14:27:12.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "SOLUTION-ULTIME-FRONTEND.md",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\SOLUTION-ULTIME-FRONTEND.md",
+              "RelativeDocumentMoniker": "SOLUTION-ULTIME-FRONTEND.md",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\SOLUTION-ULTIME-FRONTEND.md",
+              "RelativeToolTip": "SOLUTION-ULTIME-FRONTEND.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-12-15T14:30:58.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipativeExam\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "CagnotteParticipativeExam\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipativeExam\\Properties\\launchSettings.json",
+              "RelativeToolTip": "CagnotteParticipativeExam\\Properties\\launchSettings.json",
+              "ViewState": "AgIAACgAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-15T14:23:23.041Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "GUIDE-TESTS-COMPLETS.md",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\GUIDE-TESTS-COMPLETS.md",
+              "RelativeDocumentMoniker": "GUIDE-TESTS-COMPLETS.md",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\GUIDE-TESTS-COMPLETS.md",
+              "RelativeToolTip": "GUIDE-TESTS-COMPLETS.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-12-15T14:17:59.027Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Demarrer-Tout.ps1",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Demarrer-Tout.ps1",
+              "RelativeDocumentMoniker": "Demarrer-Tout.ps1",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Demarrer-Tout.ps1",
+              "RelativeToolTip": "Demarrer-Tout.ps1",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-15T14:15:33.656Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "LISEZ-MOI-DEMARRAGE.md",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\LISEZ-MOI-DEMARRAGE.md",
+              "RelativeDocumentMoniker": "LISEZ-MOI-DEMARRAGE.md",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\LISEZ-MOI-DEMARRAGE.md",
+              "RelativeToolTip": "LISEZ-MOI-DEMARRAGE.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-12-15T14:13:52.171Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Demarrer-Applications.bat",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Demarrer-Applications.bat",
+              "RelativeDocumentMoniker": "Demarrer-Applications.bat",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Demarrer-Applications.bat",
+              "RelativeToolTip": "Demarrer-Applications.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000614|",
+              "WhenOpened": "2025-12-15T14:13:21.904Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "AIDE-FRONTEND-PAS-AFFICHE.md",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\AIDE-FRONTEND-PAS-AFFICHE.md",
+              "RelativeDocumentMoniker": "AIDE-FRONTEND-PAS-AFFICHE.md",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\AIDE-FRONTEND-PAS-AFFICHE.md",
+              "RelativeToolTip": "AIDE-FRONTEND-PAS-AFFICHE.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-12-15T14:13:13.281Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "CagnotteParticipative.UI\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "CagnotteParticipative.UI\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAA4AAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-15T14:12:10.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "CagnotteParticipative.UI\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "CagnotteParticipative.UI\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAB8AAAAAAAAAAABRwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-15T14:12:02.868Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "DEMARRAGE-GUIDE.md",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\DEMARRAGE-GUIDE.md",
+              "RelativeDocumentMoniker": "DEMARRAGE-GUIDE.md",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\DEMARRAGE-GUIDE.md",
+              "RelativeToolTip": "DEMARRAGE-GUIDE.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-12-15T14:09:15.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "CagnotteParticipative.UI\\wwwroot\\index.html",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\wwwroot\\index.html",
+              "RelativeToolTip": "CagnotteParticipative.UI\\wwwroot\\index.html",
+              "ViewState": "AgIAACEAAAAAAAAAAEBVwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-15T14:06:53.479Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\_Imports.razor",
+              "RelativeDocumentMoniker": "CagnotteParticipative.UI\\_Imports.razor",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\_Imports.razor",
+              "RelativeToolTip": "CagnotteParticipative.UI\\_Imports.razor",
+              "ViewState": "AgIAAAoAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-15T14:06:34.215Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "README-FRONTEND.md",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\README-FRONTEND.md",
+              "RelativeDocumentMoniker": "README-FRONTEND.md",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\README-FRONTEND.md",
+              "RelativeToolTip": "README-FRONTEND.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-12-15T14:04:54.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Start-Applications.ps1",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Start-Applications.ps1",
+              "RelativeDocumentMoniker": "Start-Applications.ps1",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Start-Applications.ps1",
+              "RelativeToolTip": "Start-Applications.ps1",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-15T14:04:19.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ContributionDto.cs",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Models\\ContributionDto.cs",
+              "RelativeDocumentMoniker": "CagnotteParticipative.UI\\Models\\ContributionDto.cs",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Models\\ContributionDto.cs",
+              "RelativeToolTip": "CagnotteParticipative.UI\\Models\\ContributionDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T14:04:04.128Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "app.css",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\wwwroot\\css\\app.css",
+              "RelativeDocumentMoniker": "CagnotteParticipative.UI\\wwwroot\\css\\app.css",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\wwwroot\\css\\app.css",
+              "RelativeToolTip": "CagnotteParticipative.UI\\wwwroot\\css\\app.css",
+              "ViewState": "AgIAAIIAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-15T14:03:36.211Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "CagnotteParticipative.UI\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Pages\\Home.razor",
+              "RelativeToolTip": "CagnotteParticipative.UI\\Pages\\Home.razor",
+              "ViewState": "AgIAAJIAAAAAAAAAAABRwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-15T14:02:40.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CagnotteDetails.razor",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Pages\\CagnotteDetails.razor",
+              "RelativeDocumentMoniker": "CagnotteParticipative.UI\\Pages\\CagnotteDetails.razor",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Pages\\CagnotteDetails.razor",
+              "RelativeToolTip": "CagnotteParticipative.UI\\Pages\\CagnotteDetails.razor",
+              "ViewState": "AgIAAAABAAAAAAAAAABRwAMBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-15T14:02:12.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CreateCagnotte.razor",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Pages\\CreateCagnotte.razor",
+              "RelativeDocumentMoniker": "CagnotteParticipative.UI\\Pages\\CreateCagnotte.razor",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Pages\\CreateCagnotte.razor",
+              "RelativeToolTip": "CagnotteParticipative.UI\\Pages\\CreateCagnotte.razor",
+              "ViewState": "AgIAAHkAAAAAAAAAAABRwHwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-15T14:01:38.421Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CagnotteList.razor",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Pages\\CagnotteList.razor",
+              "RelativeDocumentMoniker": "CagnotteParticipative.UI\\Pages\\CagnotteList.razor",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Pages\\CagnotteList.razor",
+              "RelativeToolTip": "CagnotteParticipative.UI\\Pages\\CagnotteList.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-15T14:01:21.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CagnotteService.cs",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Services\\CagnotteService.cs",
+              "RelativeDocumentMoniker": "CagnotteParticipative.UI\\Services\\CagnotteService.cs",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Services\\CagnotteService.cs",
+              "RelativeToolTip": "CagnotteParticipative.UI\\Services\\CagnotteService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T14:01:02.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CreateContributionRequest.cs",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Models\\CreateContributionRequest.cs",
+              "RelativeDocumentMoniker": "CagnotteParticipative.UI\\Models\\CreateContributionRequest.cs",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Models\\CreateContributionRequest.cs",
+              "RelativeToolTip": "CagnotteParticipative.UI\\Models\\CreateContributionRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T14:00:51.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CreateCagnotteRequest.cs",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Models\\CreateCagnotteRequest.cs",
+              "RelativeDocumentMoniker": "CagnotteParticipative.UI\\Models\\CreateCagnotteRequest.cs",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Models\\CreateCagnotteRequest.cs",
+              "RelativeToolTip": "CagnotteParticipative.UI\\Models\\CreateCagnotteRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T14:00:42.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CagnotteDto.cs",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Models\\CagnotteDto.cs",
+              "RelativeDocumentMoniker": "CagnotteParticipative.UI\\Models\\CagnotteDto.cs",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Models\\CagnotteDto.cs",
+              "RelativeToolTip": "CagnotteParticipative.UI\\Models\\CagnotteDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T14:00:35.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Program.cs",
+              "RelativeDocumentMoniker": "CagnotteParticipative.UI\\Program.cs",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipative.UI\\Program.cs",
+              "RelativeToolTip": "CagnotteParticipative.UI\\Program.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAABRwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T14:00:02.561Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CagnotteDto.cs",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Models\\CagnotteDto.cs",
+              "RelativeDocumentMoniker": "Models\\CagnotteDto.cs",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Models\\CagnotteDto.cs",
+              "RelativeToolTip": "Models\\CagnotteDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T13:58:32.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ContributionDto.cs",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Models\\ContributionDto.cs",
+              "RelativeDocumentMoniker": "Models\\ContributionDto.cs",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Models\\ContributionDto.cs",
+              "RelativeToolTip": "Models\\ContributionDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T13:58:29.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipativeExam\\Program.cs",
+              "RelativeDocumentMoniker": "CagnotteParticipativeExam\\Program.cs",
+              "ToolTip": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\CagnotteParticipativeExam\\Program.cs",
+              "RelativeToolTip": "CagnotteParticipativeExam\\Program.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAhwE0AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T13:27:26.479Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

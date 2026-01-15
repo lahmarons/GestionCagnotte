@@ -1,0 +1,675 @@
+﻿// État global de l'application
+let currentPage = 'cagnottes';
+let cagnottes = [];
+let entreprises = [];
+let participants = [];
+let participations = [];
+
+// Initialisation de l'application
+document.addEventListener('DOMContentLoaded', async () => {
+    initNavigation();
+    await loadAllData();
+    renderCurrentPage();
+    initForms();
+});
+
+// Navigation
+function initNavigation() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const page = link.getAttribute('data-page');
+            navigateToPage(page);
+        });
+    });
+}
+
+function navigateToPage(page) {
+    // Mise à jour des liens actifs
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-page') === page) {
+            link.classList.add('active');
+        }
+    });
+
+    // Mise à jour des pages
+    document.querySelectorAll('.page-content').forEach(content => {
+        content.classList.remove('active');
+    });
+    document.getElementById(`${page}-page`).classList.add('active');
+
+    currentPage = page;
+    renderCurrentPage();
+}
+
+// Chargement des données
+async function loadAllData() {
+    try {
+        showLoading();
+        await Promise.all([
+            loadCagnottes(),
+            loadEntreprises(),
+            loadParticipants(),
+            loadParticipations()
+        ]);
+        hideLoading();
+    } catch (error) {
+        console.error('Erreur lors du chargement des données:', error);
+        showToast('Erreur lors du chargement des données', 'error');
+        hideLoading();
+    }
+}
+
+async function loadCagnottes() {
+    cagnottes = await CagnotteAPI.getAll();
+}
+
+async function loadEntreprises() {
+    entreprises = await EntrepriseAPI.getAll();
+}
+
+async function loadParticipants() {
+    participants = await ParticipantAPI.getAll();
+}
+
+async function loadParticipations() {
+    participations = await ParticipationAPI.getAll();
+}
+
+// Rendu de la page actuelle
+function renderCurrentPage() {
+    switch (currentPage) {
+        case 'cagnottes':
+            renderCagnottes();
+            break;
+        case 'entreprises':
+            renderEntreprises();
+            break;
+        case 'participants':
+            renderParticipants();
+            break;
+        case 'participations':
+            renderParticipations();
+            break;
+    }
+}
+
+// Rendu des Cagnottes
+function renderCagnottes() {
+    const container = document.getElementById('cagnottes-list');
+    
+    if (cagnottes.length === 0) {
+        container.innerHTML = `
+            <div class="empty-state">
+                <i class="fas fa-hand-holding-usd"></i>
+                <p>Aucune cagnotte disponible. Créez-en une pour commencer !</p>
+            </div>
+        `;
+        return;
+    }
+
+    container.innerHTML = cagnottes.map(cagnotte => {
+        const entreprise = entreprises.find(e => e.entrepriseId === cagnotte.entrepriseId);
+        const participationsCagnotte = participations.filter(p => p.cagnotteId === cagnotte.cagnotteId);
+        const montantCollecte = participationsCagnotte.reduce((sum, p) => sum + p.montant, 0);
+        const progression = (montantCollecte / cagnotte.objectif * 100).toFixed(1);
+        const dateDebut = new Date(cagnotte.dateDebut).toLocaleDateString('fr-FR');
+        const dateFin = new Date(cagnotte.dateFin).toLocaleDateString('fr-FR');
+        const estActive = new Date(cagnotte.dateFin) >= new Date();
+
+        return `
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">${cagnotte.nom}</div>
+                    <div class="card-subtitle">${entreprise ? entreprise.nom : 'Entreprise inconnue'}</div>
+                </div>
+                <div class="card-body">
+                    <p style="color: var(--text-light); margin-bottom: 1rem;">${cagnotte.description}</p>
+                    
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${Math.min(progression, 100)}%">
+                                ${progression}%
+                            </div>
+                        </div>
+                        <div class="progress-text">
+                            <span>${montantCollecte.toFixed(2)} €</span>
+                            <span>Objectif: ${cagnotte.objectif.toFixed(2)} €</span>
+                        </div>
+                    </div>
+
+                    <div class="card-info">
+                        <div class="card-info-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Du ${dateDebut} au ${dateFin}</span>
+                        </div>
+                        <div class="card-info-item">
+                            <i class="fas fa-users"></i>
+                            <span>${participationsCagnotte.length} participant(s)</span>
+                        </div>
+                        <div class="card-info-item">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="badge ${estActive ? 'badge-success' : 'badge-danger'}">
+                                ${estActive ? 'Active' : 'Terminée'}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-warning" onclick="editCagnotte(${cagnotte.cagnotteId})">
+                        <i class="fas fa-edit"></i> Modifier
+                    </button>
+                    <button class="btn btn-danger" onclick="deleteCagnotte(${cagnotte.cagnotteId})">
+                        <i class="fas fa-trash"></i> Supprimer
+                    </button>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+// Rendu des Entreprises
+function renderEntreprises() {
+    const container = document.getElementById('entreprises-list');
+    
+    if (entreprises.length === 0) {
+        container.innerHTML = `
+            <div class="empty-state">
+                <i class="fas fa-building"></i>
+                <p>Aucune entreprise enregistrée. Ajoutez-en une pour commencer !</p>
+            </div>
+        `;
+        return;
+    }
+
+    container.innerHTML = entreprises.map(entreprise => {
+        const cagnottesEntreprise = cagnottes.filter(c => c.entrepriseId === entreprise.entrepriseId);
+        
+        return `
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">${entreprise.nom}</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-info">
+                        <div class="card-info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>${entreprise.adresse}</span>
+                        </div>
+                        <div class="card-info-item">
+                            <i class="fas fa-hand-holding-usd"></i>
+                            <span>${cagnottesEntreprise.length} cagnotte(s)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-danger" onclick="deleteEntreprise(${entreprise.entrepriseId})">
+                        <i class="fas fa-trash"></i> Supprimer
+                    </button>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+// Rendu des Participants
+function renderParticipants() {
+    const container = document.getElementById('participants-list');
+    
+    if (participants.length === 0) {
+        container.innerHTML = `
+            <div class="empty-state">
+                <i class="fas fa-users"></i>
+                <p>Aucun participant enregistré. Ajoutez-en un pour commencer !</p>
+            </div>
+        `;
+        return;
+    }
+
+    container.innerHTML = participants.map(participant => {
+        const participationsParticipant = participations.filter(p => p.participantId === participant.participantId);
+        const totalMontant = participationsParticipant.reduce((sum, p) => sum + p.montant, 0);
+        
+        return `
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">${participant.nom} ${participant.prenom}</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-info">
+                        <div class="card-info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>${participant.email}</span>
+                        </div>
+                        <div class="card-info-item">
+                            <i class="fas fa-donate"></i>
+                            <span>${participationsParticipant.length} participation(s)</span>
+                        </div>
+                        <div class="card-info-item">
+                            <i class="fas fa-coins"></i>
+                            <span>Total: ${totalMontant.toFixed(2)} €</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-warning" onclick="editParticipant(${participant.participantId})">
+                        <i class="fas fa-edit"></i> Modifier
+                    </button>
+                    <button class="btn btn-danger" onclick="deleteParticipant(${participant.participantId})">
+                        <i class="fas fa-trash"></i> Supprimer
+                    </button>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+// Rendu des Participations
+function renderParticipations() {
+    const tbody = document.getElementById('participations-list');
+    
+    if (participations.length === 0) {
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="5" style="text-align: center; padding: 3rem;">
+                    <div class="empty-state">
+                        <i class="fas fa-donate"></i>
+                        <p>Aucune participation enregistrée.</p>
+                    </div>
+                </td>
+            </tr>
+        `;
+        return;
+    }
+
+    tbody.innerHTML = participations.map(participation => {
+        const cagnotte = cagnottes.find(c => c.cagnotteId === participation.cagnotteId);
+        const participant = participants.find(p => p.participantId === participation.participantId);
+        const date = new Date(participation.dateParticipation).toLocaleDateString('fr-FR');
+        
+        return `
+            <tr>
+                <td>${cagnotte ? cagnotte.nom : 'Cagnotte inconnue'}</td>
+                <td>${participant ? `${participant.nom} ${participant.prenom}` : 'Participant inconnu'}</td>
+                <td><strong>${participation.montant.toFixed(2)} €</strong></td>
+                <td>${date}</td>
+                <td>
+                    <button class="btn btn-warning" onclick="editParticipation(${participation.cagnotteId}, ${participation.participantId})">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-danger" onclick="deleteParticipation(${participation.cagnotteId}, ${participation.participantId})">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        `;
+    }).join('');
+}
+
+// Modals
+function showCagnotteModal(id = null) {
+    const modal = document.getElementById('cagnotte-modal');
+    const form = document.getElementById('cagnotte-form');
+    const title = document.getElementById('cagnotte-modal-title');
+    
+    form.reset();
+    loadEntreprisesInSelect();
+    
+    if (id) {
+        title.textContent = 'Modifier la Cagnotte';
+        const cagnotte = cagnottes.find(c => c.cagnotteId === id);
+        if (cagnotte) {
+            document.getElementById('cagnotte-id').value = cagnotte.cagnotteId;
+            document.getElementById('cagnotte-nom').value = cagnotte.nom;
+            document.getElementById('cagnotte-description').value = cagnotte.description;
+            document.getElementById('cagnotte-objectif').value = cagnotte.objectif;
+            document.getElementById('cagnotte-entreprise').value = cagnotte.entrepriseId;
+            document.getElementById('cagnotte-date-debut').value = cagnotte.dateDebut.split('T')[0];
+            document.getElementById('cagnotte-date-fin').value = cagnotte.dateFin.split('T')[0];
+        }
+    } else {
+        title.textContent = 'Nouvelle Cagnotte';
+        document.getElementById('cagnotte-id').value = '';
+    }
+    
+    modal.classList.add('active');
+}
+
+function showEntrepriseModal() {
+    const modal = document.getElementById('entreprise-modal');
+    const form = document.getElementById('entreprise-form');
+    form.reset();
+    modal.classList.add('active');
+}
+
+function showParticipantModal(id = null) {
+    const modal = document.getElementById('participant-modal');
+    const form = document.getElementById('participant-form');
+    const title = document.getElementById('participant-modal-title');
+    
+    form.reset();
+    
+    if (id) {
+        title.textContent = 'Modifier le Participant';
+        const participant = participants.find(p => p.participantId === id);
+        if (participant) {
+            document.getElementById('participant-id').value = participant.participantId;
+            document.getElementById('participant-nom').value = participant.nom;
+            document.getElementById('participant-prenom').value = participant.prenom;
+            document.getElementById('participant-email').value = participant.email;
+        }
+    } else {
+        title.textContent = 'Nouveau Participant';
+        document.getElementById('participant-id').value = '';
+    }
+    
+    modal.classList.add('active');
+}
+
+function showParticipationModal(cagnotteId = null, participantId = null) {
+    const modal = document.getElementById('participation-modal');
+    const form = document.getElementById('participation-form');
+    
+    form.reset();
+    loadCagnottesInSelect();
+    loadParticipantsInSelect();
+    
+    if (cagnotteId && participantId) {
+        const participation = participations.find(p => 
+            p.cagnotteId === cagnotteId && p.participantId === participantId
+        );
+        if (participation) {
+            document.getElementById('participation-cagnotte').value = participation.cagnotteId;
+            document.getElementById('participation-participant').value = participation.participantId;
+            document.getElementById('participation-montant').value = participation.montant;
+            document.getElementById('participation-date').value = participation.dateParticipation.split('T')[0];
+            
+            // Désactiver les selects pour éviter de changer les IDs
+            document.getElementById('participation-cagnotte').disabled = true;
+            document.getElementById('participation-participant').disabled = true;
+        }
+    } else {
+        document.getElementById('participation-cagnotte').disabled = false;
+        document.getElementById('participation-participant').disabled = false;
+        // Date par défaut
+        document.getElementById('participation-date').value = new Date().toISOString().split('T')[0];
+    }
+    
+    modal.classList.add('active');
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).classList.remove('active');
+}
+
+// Charger les entreprises dans le select
+function loadEntreprisesInSelect() {
+    const select = document.getElementById('cagnotte-entreprise');
+    select.innerHTML = '<option value="">Sélectionner une entreprise</option>';
+    entreprises.forEach(e => {
+        select.innerHTML += `<option value="${e.entrepriseId}">${e.nom}</option>`;
+    });
+}
+
+// Charger les cagnottes dans le select
+function loadCagnottesInSelect() {
+    const select = document.getElementById('participation-cagnotte');
+    select.innerHTML = '<option value="">Sélectionner une cagnotte</option>';
+    cagnottes.forEach(c => {
+        select.innerHTML += `<option value="${c.cagnotteId}">${c.nom}</option>`;
+    });
+}
+
+// Charger les participants dans le select
+function loadParticipantsInSelect() {
+    const select = document.getElementById('participation-participant');
+    select.innerHTML = '<option value="">Sélectionner un participant</option>';
+    participants.forEach(p => {
+        select.innerHTML += `<option value="${p.participantId}">${p.nom} ${p.prenom}</option>`;
+    });
+}
+
+// Initialisation des formulaires
+function initForms() {
+    // Formulaire Cagnotte
+    document.getElementById('cagnotte-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        await saveCagnotte();
+    });
+
+    // Formulaire Entreprise
+    document.getElementById('entreprise-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        await saveEntreprise();
+    });
+
+    // Formulaire Participant
+    document.getElementById('participant-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        await saveParticipant();
+    });
+
+    // Formulaire Participation
+    document.getElementById('participation-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        await saveParticipation();
+    });
+}
+
+// Sauvegarde des données
+async function saveCagnotte() {
+    try {
+        console.log('💾 Début de saveCagnotte()');
+        
+        const id = document.getElementById('cagnotte-id').value;
+        const data = {
+            nom: document.getElementById('cagnotte-nom').value,
+            description: document.getElementById('cagnotte-description').value,
+            objectif: parseFloat(document.getElementById('cagnotte-objectif').value),
+            entrepriseId: parseInt(document.getElementById('cagnotte-entreprise').value),
+            dateDebut: document.getElementById('cagnotte-date-debut').value,
+            dateFin: document.getElementById('cagnotte-date-fin').value
+        };
+
+        console.log('📝 Données à sauvegarder:', data);
+
+        let created;
+        if (id) {
+            console.log('🔄 Mode modification, ID:', id);
+            created = await CagnotteAPI.update(parseInt(id), data);
+            showToast('Cagnotte modifiée avec succès', 'success');
+        } else {
+            console.log('✨ Mode création');
+            created = await CagnotteAPI.create(data);
+            console.log('✅ Cagnotte créée:', created);
+            showToast('Cagnotte créée avec succès', 'success');
+        }
+
+        // Fermer le modal
+        closeModal('cagnotte-modal');
+        console.log('🔒 Modal fermé');
+        
+        // Recharger les données depuis l'API
+        console.log('🔄 Rechargement des cagnottes...');
+        await loadCagnottes();
+        console.log('✅ Cagnottes rechargées, nombre:', cagnottes.length);
+        
+        // Afficher la liste mise à jour
+        console.log('📍 Page actuelle:', currentPage);
+        if (currentPage === 'cagnottes') {
+            console.log('🎨 Rendu des cagnottes...');
+            renderCagnottes();
+            console.log('✅ Rendu terminé');
+        } else {
+            console.log('⚠️ Pas sur la page cagnottes, pas de rendu');
+        }
+    } catch (error) {
+        console.error('❌ Erreur dans saveCagnotte:', error);
+        showToast(error.message, 'error');
+    }
+}
+
+async function saveEntreprise() {
+    try {
+        console.log('💾 Début de saveEntreprise()');
+        
+        const data = {
+            nom: document.getElementById('entreprise-nom').value,
+            adresse: document.getElementById('entreprise-adresse').value
+        };
+
+        console.log('📝 Données entreprise:', data);
+        
+        const created = await EntrepriseAPI.create(data);
+        console.log('✅ Entreprise créée:', created);
+        showToast('Entreprise créée avec succès', 'success');
+        
+        closeModal('entreprise-modal');
+        
+        console.log('🔄 Rechargement des entreprises...');
+        await loadEntreprises();
+        console.log('✅ Entreprises rechargées, nombre:', entreprises.length);
+        
+        if (currentPage === 'entreprises') {
+            console.log('🎨 Rendu des entreprises...');
+            renderEntreprises();
+            console.log('✅ Rendu terminé');
+        }
+    } catch (error) {
+        console.error('❌ Erreur dans saveEntreprise:', error);
+        showToast(error.message, 'error');
+    }
+}
+
+async function saveParticipant() {
+    try {
+        console.log('💾 Début de saveParticipant()');
+        
+        const id = document.getElementById('participant-id').value;
+        const data = {
+            nom: document.getElementById('participant-nom').value,
+            prenom: document.getElementById('participant-prenom').value,
+            email: document.getElementById('participant-email').value
+        };
+
+        console.log('📝 Données participant:', data);
+
+        if (id) {
+            await ParticipantAPI.update(parseInt(id), data);
+            showToast('Participant modifié avec succès', 'success');
+        } else {
+            const created = await ParticipantAPI.create(data);
+            console.log('✅ Participant créé:', created);
+            showToast('Participant créé avec succès', 'success');
+        }
+
+        closeModal('participant-modal');
+        
+        console.log('🔄 Rechargement des participants...');
+        await loadParticipants();
+        console.log('✅ Participants rechargés, nombre:', participants.length);
+        
+        if (currentPage === 'participants') {
+            console.log('🎨 Rendu des participants...');
+            renderParticipants();
+            console.log('✅ Rendu terminé');
+        }
+    } catch (error) {
+        console.error('❌ Erreur dans saveParticipant:', error);
+        showToast(error.message, 'error');
+    }
+}
+
+// Édition
+async function editCagnotte(id) {
+    showCagnotteModal(id);
+}
+
+async function editParticipant(id) {
+    showParticipantModal(id);
+}
+
+async function editParticipation(cagnotteId, participantId) {
+    showParticipationModal(cagnotteId, participantId);
+}
+
+// Suppression
+async function deleteCagnotte(id) {
+    if (!confirm('Êtes-vous sûr de vouloir supprimer cette cagnotte ?')) return;
+    
+    try {
+        await CagnotteAPI.delete(id);
+        showToast('Cagnotte supprimée avec succès', 'success');
+        await loadCagnottes();
+        renderCagnottes();
+    } catch (error) {
+        console.error('Erreur:', error);
+        showToast(error.message, 'error');
+    }
+}
+
+async function deleteEntreprise(id) {
+    if (!confirm('Êtes-vous sûr de vouloir supprimer cette entreprise ?')) return;
+    
+    try {
+        await EntrepriseAPI.delete(id);
+        showToast('Entreprise supprimée avec succès', 'success');
+        await loadEntreprises();
+        renderEntreprises();
+    } catch (error) {
+        console.error('Erreur:', error);
+        showToast(error.message, 'error');
+    }
+}
+
+async function deleteParticipant(id) {
+    if (!confirm('Êtes-vous sûr de vouloir supprimer ce participant ?')) return;
+    
+    try {
+        await ParticipantAPI.delete(id);
+        showToast('Participant supprimé avec succès', 'success');
+        await loadParticipants();
+        renderParticipants();
+    } catch (error) {
+        console.error('Erreur:', error);
+        showToast(error.message, 'error');
+    }
+}
+
+async function deleteParticipation(cagnotteId, participantId) {
+    if (!confirm('Êtes-vous sûr de vouloir supprimer cette participation ?')) return;
+    
+    try {
+        await ParticipationAPI.delete(cagnotteId, participantId);
+        showToast('Participation supprimée avec succès', 'success');
+        await loadParticipations();
+        await loadCagnottes();
+        renderParticipations();
+        if (currentPage === 'cagnottes') renderCagnottes();
+    } catch (error) {
+        console.error('Erreur:', error);
+        showToast(error.message, 'error');
+    }
+}
+
+// Utilitaires
+function showToast(message, type = 'success') {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.className = `toast ${type} show`;
+    
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000);
+}
+
+function showLoading() {
+    // Vous pouvez implémenter un loader global ici
+    console.log('Loading...');
+}
+
+function hideLoading() {
+    console.log('Loading complete');
+}

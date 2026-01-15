@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Cagnottes Participatives</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo"><i class="fas fa-piggy-bank"></i> Cagnottes Participatives</h1>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active" data-page="cagnottes"><i class="fas fa-hand-holding-usd"></i> Cagnottes</a></li>
+                <li><a href="#" class="nav-link" data-page="entreprises"><i class="fas fa-building"></i> Entreprises</a></li>
+                <li><a href="#" class="nav-link" data-page="participants"><i class="fas fa-users"></i> Participants</a></li>
+                <li><a href="#" class="nav-link" data-page="participations"><i class="fas fa-donate"></i> Participations</a></li>
+                <li><a href="/guide.html" target="_blank" style="color: #fbbf24;"><i class="fas fa-book"></i> Guide</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Page Cagnottes -->
+        <div id="cagnottes-page" class="page-content active">
+            <div class="page-header">
+                <h2><i class="fas fa-hand-holding-usd"></i> Gestion des Cagnottes</h2>
+                <button class="btn btn-primary" onclick="showCagnotteModal()">
+                    <i class="fas fa-plus"></i> Nouvelle Cagnotte
+                </button>
+            </div>
+            <div class="cards-grid" id="cagnottes-list"></div>
+        </div>
+
+        <!-- Page Entreprises -->
+        <div id="entreprises-page" class="page-content">
+            <div class="page-header">
+                <h2><i class="fas fa-building"></i> Gestion des Entreprises</h2>
+                <button class="btn btn-primary" onclick="showEntrepriseModal()">
+                    <i class="fas fa-plus"></i> Nouvelle Entreprise
+                </button>
+            </div>
+            <div class="cards-grid" id="entreprises-list"></div>
+        </div>
+
+        <!-- Page Participants -->
+        <div id="participants-page" class="page-content">
+            <div class="page-header">
+                <h2><i class="fas fa-users"></i> Gestion des Participants</h2>
+                <button class="btn btn-primary" onclick="showParticipantModal()">
+                    <i class="fas fa-plus"></i> Nouveau Participant
+                </button>
+            </div>
+            <div class="cards-grid" id="participants-list"></div>
+        </div>
+
+        <!-- Page Participations -->
+        <div id="participations-page" class="page-content">
+            <div class="page-header">
+                <h2><i class="fas fa-donate"></i> Gestion des Participations</h2>
+                <button class="btn btn-primary" onclick="showParticipationModal()">
+                    <i class="fas fa-plus"></i> Nouvelle Participation
+                </button>
+            </div>
+            <div class="table-container">
+                <table class="data-table" id="participations-table">
+                    <thead>
+                        <tr>
+                            <th>Cagnotte</th>
+                            <th>Participant</th>
+                            <th>Montant</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="participations-list"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Cagnotte -->
+    <div id="cagnotte-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="cagnotte-modal-title">Nouvelle Cagnotte</h3>
+                <span class="close" onclick="closeModal('cagnotte-modal')">&times;</span>
+            </div>
+            <form id="cagnotte-form" class="modal-form">
+                <input type="hidden" id="cagnotte-id">
+                
+                <div class="form-group">
+                    <label for="cagnotte-nom">Nom *</label>
+                    <input type="text" id="cagnotte-nom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cagnotte-description">Description *</label>
+                    <textarea id="cagnotte-description" rows="3" required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cagnotte-objectif">Objectif (€) *</label>
+                        <input type="number" id="cagnotte-objectif" step="0.01" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cagnotte-entreprise">Entreprise *</label>
+                        <select id="cagnotte-entreprise" required>
+                            <option value="">Sélectionner une entreprise</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cagnotte-date-debut">Date de début *</label>
+                        <input type="date" id="cagnotte-date-debut" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cagnotte-date-fin">Date de fin *</label>
+                        <input type="date" id="cagnotte-date-fin" required>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('cagnotte-modal')">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Entreprise -->
+    <div id="entreprise-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Nouvelle Entreprise</h3>
+                <span class="close" onclick="closeModal('entreprise-modal')">&times;</span>
+            </div>
+            <form id="entreprise-form" class="modal-form">
+                <div class="form-group">
+                    <label for="entreprise-nom">Nom *</label>
+                    <input type="text" id="entreprise-nom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="entreprise-adresse">Adresse *</label>
+                    <input type="text" id="entreprise-adresse" required>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('entreprise-modal')">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Participant -->
+    <div id="participant-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="participant-modal-title">Nouveau Participant</h3>
+                <span class="close" onclick="closeModal('participant-modal')">&times;</span>
+            </div>
+            <form id="participant-form" class="modal-form">
+                <input type="hidden" id="participant-id">
+                
+                <div class="form-group">
+                    <label for="participant-nom">Nom *</label>
+                    <input type="text" id="participant-nom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="participant-prenom">Prénom *</label>
+                    <input type="text" id="participant-prenom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="participant-email">Email *</label>
+                    <input type="email" id="participant-email" required>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('participant-modal')">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Participation -->
+    <div id="participation-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Nouvelle Participation</h3>
+                <span class="close" onclick="closeModal('participation-modal')">&times;</span>
+            </div>
+            <form id="participation-form" class="modal-form">
+                <div class="form-group">
+                    <label for="participation-cagnotte">Cagnotte *</label>
+                    <select id="participation-cagnotte" required>
+                        <option value="">Sélectionner une cagnotte</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="participation-participant">Participant *</label>
+                    <select id="participation-participant" required>
+                        <option value="">Sélectionner un participant</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="participation-montant">Montant (€) *</label>
+                    <input type="number" id="participation-montant" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="participation-date">Date *</label>
+                    <input type="date" id="participation-date" required>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('participation-modal')">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

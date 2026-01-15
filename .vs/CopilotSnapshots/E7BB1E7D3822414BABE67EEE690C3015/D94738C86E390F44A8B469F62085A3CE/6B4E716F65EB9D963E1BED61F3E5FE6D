@@ -1,0 +1,179 @@
+﻿// Configuration de l'API
+const API_BASE_URL = 'https://localhost:7292/api'; // Port mis à jour
+
+// Service API pour les Cagnottes
+const CagnotteAPI = {
+    async getAll() {
+        const response = await fetch(`${API_BASE_URL}/Cagnotte`);
+        if (!response.ok) throw new Error('Erreur lors de la récupération des cagnottes');
+        return await response.json();
+    },
+
+    async getById(id) {
+        const response = await fetch(`${API_BASE_URL}/Cagnotte/${id}`);
+        if (!response.ok) throw new Error('Cagnotte introuvable');
+        return await response.json();
+    },
+
+    async create(data) {
+        const response = await fetch(`${API_BASE_URL}/Cagnotte`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.error || 'Erreur lors de la création');
+        }
+        return await response.json();
+    },
+
+    async update(id, data) {
+        const response = await fetch(`${API_BASE_URL}/Cagnotte/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        if (!response.ok) throw new Error('Erreur lors de la mise à jour');
+        return await response.json();
+    },
+
+    async delete(id) {
+        const response = await fetch(`${API_BASE_URL}/Cagnotte/${id}`, {
+            method: 'DELETE'
+        });
+        if (!response.ok) throw new Error('Erreur lors de la suppression');
+        return true;
+    }
+};
+
+// Service API pour les Entreprises
+const EntrepriseAPI = {
+    async getAll() {
+        const response = await fetch(`${API_BASE_URL}/Entreprise`);
+        if (!response.ok) throw new Error('Erreur lors de la récupération des entreprises');
+        return await response.json();
+    },
+
+    async getById(id) {
+        const response = await fetch(`${API_BASE_URL}/Entreprise/${id}`);
+        if (!response.ok) throw new Error('Entreprise introuvable');
+        return await response.json();
+    },
+
+    async create(data) {
+        const response = await fetch(`${API_BASE_URL}/Entreprise`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        if (!response.ok) throw new Error('Erreur lors de la création');
+        return await response.json();
+    },
+
+    async delete(id) {
+        const response = await fetch(`${API_BASE_URL}/Entreprise/${id}`, {
+            method: 'DELETE'
+        });
+        if (!response.ok) throw new Error('Erreur lors de la suppression');
+        return true;
+    }
+};
+
+// Service API pour les Participants
+const ParticipantAPI = {
+    async getAll() {
+        const response = await fetch(`${API_BASE_URL}/Participant`);
+        if (!response.ok) throw new Error('Erreur lors de la récupération des participants');
+        return await response.json();
+    },
+
+    async getById(id) {
+        const response = await fetch(`${API_BASE_URL}/Participant/${id}`);
+        if (!response.ok) throw new Error('Participant introuvable');
+        return await response.json();
+    },
+
+    async create(data) {
+        const response = await fetch(`${API_BASE_URL}/Participant`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        if (!response.ok) throw new Error('Erreur lors de la création');
+        return await response.json();
+    },
+
+    async update(id, data) {
+        const response = await fetch(`${API_BASE_URL}/Participant/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        if (!response.ok) throw new Error('Erreur lors de la mise à jour');
+        return await response.json();
+    },
+
+    async delete(id) {
+        const response = await fetch(`${API_BASE_URL}/Participant/${id}`, {
+            method: 'DELETE'
+        });
+        if (!response.ok) throw new Error('Erreur lors de la suppression');
+        return true;
+    }
+};
+
+// Service API pour les Participations
+const ParticipationAPI = {
+    async getAll() {
+        const response = await fetch(`${API_BASE_URL}/Participation`);
+        if (!response.ok) throw new Error('Erreur lors de la récupération des participations');
+        return await response.json();
+    },
+
+    async getById(cagnotteId, participantId) {
+        const response = await fetch(`${API_BASE_URL}/Participation/${cagnotteId}/${participantId}`);
+        if (!response.ok) throw new Error('Participation introuvable');
+        return await response.json();
+    },
+
+    async getByCagnotte(cagnotteId) {
+        const response = await fetch(`${API_BASE_URL}/Participation/cagnotte/${cagnotteId}`);
+        if (!response.ok) throw new Error('Erreur lors de la récupération');
+        return await response.json();
+    },
+
+    async getByParticipant(participantId) {
+        const response = await fetch(`${API_BASE_URL}/Participation/participant/${participantId}`);
+        if (!response.ok) throw new Error('Erreur lors de la récupération');
+        return await response.json();
+    },
+
+    async create(data) {
+        const response = await fetch(`${API_BASE_URL}/Participation`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        if (!response.ok) throw new Error('Erreur lors de la création');
+        return await response.json();
+    },
+
+    async update(cagnotteId, participantId, data) {
+        const response = await fetch(`${API_BASE_URL}/Participation/${cagnotteId}/${participantId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        if (!response.ok) throw new Error('Erreur lors de la mise à jour');
+        return await response.json();
+    },
+
+    async delete(cagnotteId, participantId) {
+        const response = await fetch(`${API_BASE_URL}/Participation/${cagnotteId}/${participantId}`, {
+            method: 'DELETE'
+        });
+        if (!response.ok) throw new Error('Erreur lors de la suppression');
+        return true;
+    }
+};

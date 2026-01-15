@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "je8ziVS4koc=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lahma\\OneDrive\\Bureau\\EX S1 4G\\cagnotte-master\\Cagnotte.Domain\\Cagnotte.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lahma\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
+    "C:\\Users\\lahma\\.nuget\\packages\\xunit.extensibility.core\\2.9.3\\xunit.extensibility.core.2.9.3.nupkg.sha512",
+    "C:\\Users\\lahma\\.nuget\\packages\\xunit.extensibility.execution\\2.9.3\\xunit.extensibility.execution.2.9.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,50 @@
+﻿using Cagnotte.Data;
+using Cagnotte.Data.Repositories;
+using Cagnotte.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+// DbContext - CORRECTION: AppDbContext au lieu de AppContext
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// AutoMapper - AJOUT NÉCESSAIRE
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+// ou spécifiquement : builder.Services.AddAutoMapper(typeof(Program));
+
+// Repositories
+builder.Services.AddScoped<ICagnotteRepository, CagnotteRepository>();
+builder.Services.AddScoped<IEntrepriseRepository, EntrepriseRepository>();
+builder.Services.AddScoped<IParticipantRepository, ParticipantRepository>();
+builder.Services.AddScoped<IParticipationRepository, ParticipationRepository>();
+// Ajouter les autres repositories si nécessaire
+
+// Services
+builder.Services.AddScoped<ICagnotteService, CagnotteService>();
+builder.Services.AddScoped<IEntrepriseService, EntrepriseService>();
+builder.Services.AddScoped<IParticipantService, ParticipantService>();
+builder.Services.AddScoped<IParticipationService, ParticipationService>();
+// Ajouter les autres services si nécessaire
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+app.UseAuthorization();
+app.MapControllers();
+
+app.Run();

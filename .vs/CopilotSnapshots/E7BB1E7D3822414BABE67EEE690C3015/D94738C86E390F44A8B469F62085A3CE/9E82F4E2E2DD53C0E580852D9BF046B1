@@ -1,0 +1,108 @@
+﻿# Guide de Démarrage Rapide
+
+## 🚀 Lancement de l'application
+
+### 1. Vérifier la configuration
+
+**Fichier `appsettings.json`** :
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=.;Database=CagnotteDB;Trusted_Connection=True;TrustServerCertificate=True;"
+  }
+}
+```
+
+### 2. Lancer l'application
+
+```bash
+cd CagnotteParticipativeExam
+dotnet run
+```
+
+L'application démarrera et affichera quelque chose comme :
+```
+Now listening on: https://localhost:7292
+Now listening on: http://localhost:5184
+```
+
+### 3. Accéder à l'interface web
+
+Le navigateur s'ouvrira automatiquement sur :
+- **Interface Web** : `https://localhost:7292` (page par défaut)
+- **Swagger API** : `https://localhost:7292/swagger`
+
+⚠️ **Important** : L'interface utilisateur s'affiche maintenant par défaut au lieu de Swagger !
+
+### 4. Configuration de l'URL de l'API
+
+L'URL est déjà configurée dans le fichier :
+
+**Fichier `wwwroot/js/api.js`** :
+```javascript
+const API_BASE_URL = 'https://localhost:7292/api';
+```
+
+✅ **Aucune modification nécessaire** sauf si vous changez le port.
+
+## 📝 Premier pas
+
+### Ordre de création recommandé :
+
+1. **Créer une entreprise** (Entreprises → Nouvelle Entreprise)
+   - Nom : "Tech Corp"
+   - Adresse : "123 rue de la Tech"
+
+2. **Créer des participants** (Participants → Nouveau Participant)
+   - Nom, Prénom, Email
+
+3. **Créer une cagnotte** (Cagnottes → Nouvelle Cagnotte)
+   - Sélectionner l'entreprise créée
+   - Définir un objectif
+   - Choisir les dates
+
+4. **Ajouter des participations** (Participations → Nouvelle Participation)
+   - Sélectionner la cagnotte et le participant
+   - Entrer le montant
+
+## 🎯 Fonctionnalités disponibles
+
+### Interface Web
+✅ Gestion complète des Cagnottes (CRUD)
+✅ Gestion des Entreprises (Create, Read, Delete)
+✅ Gestion des Participants (CRUD)
+✅ Gestion des Participations (CRUD)
+✅ Visualisation de la progression des cagnottes
+✅ Interface responsive (mobile, tablette, desktop)
+
+### API REST
+✅ Endpoints complets pour toutes les entités
+✅ Documentation Swagger
+✅ CORS activé pour les appels cross-origin
+✅ Migrations automatiques au démarrage
+
+## ⚡ Raccourcis
+
+- **F12** : Ouvrir la console du navigateur pour le débogage
+- **Ctrl + Shift + R** : Recharger la page sans cache
+
+## 🔧 Résolution de problèmes
+
+### Erreur de connexion à la base de données
+- Vérifiez que SQL Server est démarré
+- Modifiez la chaîne de connexion dans `appsettings.json`
+
+### L'interface ne charge pas
+- Vérifiez que l'application est bien démarrée
+- Vérifiez l'URL dans le navigateur
+- Consultez la console du navigateur (F12)
+
+### Erreur CORS
+- Le CORS est déjà configuré dans `Program.cs`
+- Si problème persiste, vérifiez que l'URL de l'API est correcte
+
+## 📚 Documentation
+
+- **API** : Accessible via `/swagger`
+- **Code source** : Consultez les fichiers dans `wwwroot/`
+- **README détaillé** : Voir `wwwroot/README.md`

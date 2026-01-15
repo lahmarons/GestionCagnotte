@@ -1,0 +1,199 @@
+﻿// Script de test pour l'API
+// Exécutez ce script dans la console du navigateur (F12) pour tester l'API
+
+// Configuration
+const API_URL = 'https://localhost:7292/api';
+
+// Tests de l'API
+const testAPI = {
+    // Test de création d'une entreprise
+    async createEntreprise() {
+        try {
+            const response = await fetch(`${API_URL}/Entreprise`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    nom: 'Tech Solutions Inc.',
+                    adresse: '123 Avenue de la Technologie, Paris'
+                })
+            });
+            const data = await response.json();
+            console.log('✅ Entreprise créée:', data);
+            return data;
+        } catch (error) {
+            console.error('❌ Erreur:', error);
+        }
+    },
+
+    // Test de création d'un participant
+    async createParticipant() {
+        try {
+            const response = await fetch(`${API_URL}/Participant`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    nom: 'Dupont',
+                    prenom: 'Jean',
+                    email: 'jean.dupont@example.com'
+                })
+            });
+            const data = await response.json();
+            console.log('✅ Participant créé:', data);
+            return data;
+        } catch (error) {
+            console.error('❌ Erreur:', error);
+        }
+    },
+
+    // Test de création d'une cagnotte
+    async createCagnotte(entrepriseId) {
+        try {
+            const today = new Date();
+            const nextMonth = new Date(today);
+            nextMonth.setMonth(nextMonth.getMonth() + 1);
+
+            const response = await fetch(`${API_URL}/Cagnotte`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    nom: 'Cagnotte Cadeau de Noël',
+                    description: 'Cagnotte pour l\'achat de cadeaux de Noël pour l\'équipe',
+                    objectif: 5000.00,
+                    entrepriseId: entrepriseId,
+                    dateDebut: today.toISOString().split('T')[0],
+                    dateFin: nextMonth.toISOString().split('T')[0]
+                })
+            });
+            const data = await response.json();
+            console.log('✅ Cagnotte créée:', data);
+            return data;
+        } catch (error) {
+            console.error('❌ Erreur:', error);
+        }
+    },
+
+    // Test de création d'une participation
+    async createParticipation(cagnotteId, participantId) {
+        try {
+            const response = await fetch(`${API_URL}/Participation`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    cagnotteId: cagnotteId,
+                    participantId: participantId,
+                    montant: 150.00,
+                    dateParticipation: new Date().toISOString().split('T')[0]
+                })
+            });
+            const data = await response.json();
+            console.log('✅ Participation créée:', data);
+            return data;
+        } catch (error) {
+            console.error('❌ Erreur:', error);
+        }
+    },
+
+    // Récupérer toutes les cagnottes
+    async getAllCagnottes() {
+        try {
+            const response = await fetch(`${API_URL}/Cagnotte`);
+            const data = await response.json();
+            console.log('✅ Cagnottes:', data);
+            return data;
+        } catch (error) {
+            console.error('❌ Erreur:', error);
+        }
+    },
+
+    // Test complet - Crée un scénario complet
+    async runFullTest() {
+        console.log('🚀 Démarrage des tests complets...\n');
+
+        // 1. Créer une entreprise
+        console.log('1️⃣ Création d\'une entreprise...');
+        const entreprise = await this.createEntreprise();
+        if (!entreprise) return;
+
+        // 2. Créer plusieurs participants
+        console.log('\n2️⃣ Création de participants...');
+        const participant1 = await this.createParticipant();
+        
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
+        const response2 = await fetch(`${API_URL}/Participant`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                nom: 'Martin',
+                prenom: 'Sophie',
+                email: 'sophie.martin@example.com'
+            })
+        });
+        const participant2 = await response2.json();
+        console.log('✅ Participant 2 créé:', participant2);
+
+        // 3. Créer une cagnotte
+        console.log('\n3️⃣ Création d\'une cagnotte...');
+        const cagnotte = await this.createCagnotte(entreprise.entrepriseId);
+        if (!cagnotte) return;
+
+        // 4. Créer des participations
+        console.log('\n4️⃣ Création de participations...');
+        await this.createParticipation(cagnotte.cagnotteId, participant1.participantId);
+        
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
+        await fetch(`${API_URL}/Participation`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                cagnotteId: cagnotte.cagnotteId,
+                participantId: participant2.participantId,
+                montant: 250.00,
+                dateParticipation: new Date().toISOString().split('T')[0]
+            })
+        });
+
+        // 5. Afficher le résultat
+        console.log('\n5️⃣ Récupération des données finales...');
+        await this.getAllCagnottes();
+
+        console.log('\n✨ Tests terminés avec succès !');
+        console.log('💡 Rafraîchissez l\'interface pour voir les nouvelles données.');
+    }
+};
+
+// Instructions
+console.log(`
+═══════════════════════════════════════════════════════
+    🧪 CONSOLE DE TEST API - CAGNOTTES PARTICIPATIVES
+═══════════════════════════════════════════════════════
+
+📝 Commandes disponibles :
+
+  testAPI.runFullTest()
+    → Lance un scénario complet de test
+
+  testAPI.createEntreprise()
+    → Crée une entreprise de test
+
+  testAPI.createParticipant()
+    → Crée un participant de test
+
+  testAPI.createCagnotte(entrepriseId)
+    → Crée une cagnotte (nécessite un ID d'entreprise)
+
+  testAPI.createParticipation(cagnotteId, participantId)
+    → Crée une participation
+
+  testAPI.getAllCagnottes()
+    → Récupère toutes les cagnottes
+
+💡 Pour commencer rapidement, tapez :
+   testAPI.runFullTest()
+
+═══════════════════════════════════════════════════════
+`);
+
+// Export pour utilisation globale
+window.testAPI = testAPI;

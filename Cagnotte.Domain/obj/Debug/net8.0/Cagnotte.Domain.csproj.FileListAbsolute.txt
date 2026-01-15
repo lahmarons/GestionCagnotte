@@ -1,0 +1,35 @@
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Domain\bin\Debug\net8.0\Cagnotte.Domain.deps.json
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Domain\bin\Debug\net8.0\Cagnotte.Domain.dll
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Domain\bin\Debug\net8.0\Cagnotte.Domain.pdb
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.AssemblyInfoInputs.cache
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.AssemblyInfo.cs
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.csproj.CoreCompileInputs.cache
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.dll
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Domain\obj\Debug\net8.0\refint\Cagnotte.Domain.dll
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.pdb
+C:\Users\lahma\OneDrive\Bureau\.NETCore\CagnotteParticipativeExam\Cagnotte.Domain\obj\Debug\net8.0\ref\Cagnotte.Domain.dll
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Domain\bin\Debug\net8.0\Cagnotte.Domain.deps.json
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Domain\bin\Debug\net8.0\Cagnotte.Domain.dll
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Domain\bin\Debug\net8.0\Cagnotte.Domain.pdb
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.csproj.AssemblyReference.cache
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.AssemblyInfoInputs.cache
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.AssemblyInfo.cs
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.csproj.CoreCompileInputs.cache
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.dll
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Domain\obj\Debug\net8.0\refint\Cagnotte.Domain.dll
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.pdb
+C:\Users\lahma\OneDrive\Bureau\cagnotte-master\Cagnotte.Domain\obj\Debug\net8.0\ref\Cagnotte.Domain.dll
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Domain\bin\Debug\net8.0\Cagnotte.Domain.deps.json
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Domain\bin\Debug\net8.0\Cagnotte.Domain.dll
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Domain\bin\Debug\net8.0\Cagnotte.Domain.pdb
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.csproj.AssemblyReference.cache
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.AssemblyInfoInputs.cache
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.AssemblyInfo.cs
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.csproj.CoreCompileInputs.cache
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.dll
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Domain\obj\Debug\net8.0\refint\Cagnotte.Domain.dll
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Domain\obj\Debug\net8.0\Cagnotte.Domain.pdb
+C:\Users\lahma\OneDrive\Bureau\EX S1 4G\cagnotte-master\Cagnotte.Domain\obj\Debug\net8.0\ref\Cagnotte.Domain.dll

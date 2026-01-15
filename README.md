@@ -1,0 +1,254 @@
+# ?? Application de Gestion de Cagnottes Participatives
+
+Une application web complète pour gérer des cagnottes d'entreprise avec une interface utilisateur moderne et une API REST.
+
+## ? Fonctionnalités
+
+### Interface Web
+- ?? **Gestion des Cagnottes** : Créer, modifier, supprimer et suivre la progression
+- ?? **Gestion des Entreprises** : Gérer les entreprises participantes
+- ?? **Gestion des Participants** : Créer et modifier les profils
+- ?? **Gestion des Participations** : Enregistrer les contributions
+- ?? **Visualisation en temps réel** : Barres de progression et statistiques
+- ?? **Responsive Design** : Compatible mobile, tablette et desktop
+
+### API REST
+- ?? **CRUD complet** pour toutes les entités
+- ?? **Documentation Swagger** interactive
+- ?? **CORS activé** pour les appels cross-origin
+- ? **Migrations automatiques** au démarrage
+
+## ?? Démarrage Rapide
+
+### Prérequis
+- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+- [SQL Server](https://www.microsoft.com/sql-server) (Express ou version complète)
+- Un navigateur web moderne
+
+### Installation
+
+1. **Cloner ou télécharger le projet**
+   ```bash
+   cd CagnotteParticipativeExam
+   ```
+
+2. **Configurer la base de données**
+   
+   Modifiez `appsettings.json` si nécessaire :
+   ```json
+   {
+     "ConnectionStrings": {
+       "DefaultConnection": "Server=.;Database=CagnotteDB;Trusted_Connection=True;TrustServerCertificate=True;"
+     }
+   }
+   ```
+
+3. **Lancer l'application**
+   ```bash
+   dotnet run
+   ```
+
+4. **Accéder à l'interface**
+   
+   Le navigateur s'ouvrira automatiquement sur :
+   - **Interface Web** : `https://localhost:7292` ? **Page par défaut**
+   - **API Swagger** : `https://localhost:7292/swagger`
+   - **Guide** : `https://localhost:7292/guide.html`
+
+## ?? Documentation
+
+- **[Guide Complet](wwwroot/guide.html)** - Guide détaillé avec captures d'écran
+- **[Démarrage Rapide](QUICKSTART.md)** - Instructions de démarrage
+- **[Documentation UI](wwwroot/README.md)** - Détails sur l'interface utilisateur
+
+## ??? Architecture du Projet
+
+```
+CagnotteParticipativeExam/
+??? Controllers/              # Contrôleurs API
+?   ??? CagnotteController.cs
+?   ??? EntrepriseController.cs
+?   ??? ParticipantController.cs
+?   ??? ParticipationController.cs
+??? wwwroot/                  # Interface utilisateur
+?   ??? index.html           # Page principale
+?   ??? welcome.html         # Page d'accueil
+?   ??? guide.html           # Guide utilisateur
+?   ??? css/
+?   ?   ??? style.css        # Styles
+?   ??? js/
+?       ??? api.js           # Appels API
+?       ??? app.js           # Logique application
+?       ??? test-api.js      # Tests API
+??? Program.cs               # Configuration de l'application
+??? appsettings.json         # Configuration
+
+Cagnotte.Domain/             # Entités et DTOs
+Cagnotte.Data/               # Repositories et DbContext
+Cagnotte.Services/           # Services métier
+```
+
+## ?? Utilisation
+
+### Créer votre première cagnotte
+
+1. **Créer une entreprise**
+   - Aller dans "Entreprises"
+   - Cliquer sur "Nouvelle Entreprise"
+   - Remplir le nom et l'adresse
+
+2. **Ajouter des participants**
+   - Aller dans "Participants"
+   - Créer des profils avec nom, prénom et email
+
+3. **Créer une cagnotte**
+   - Aller dans "Cagnottes"
+   - Cliquer sur "Nouvelle Cagnotte"
+   - Définir l'objectif et les dates
+   - Sélectionner l'entreprise
+
+4. **Enregistrer des participations**
+   - Aller dans "Participations"
+   - Sélectionner la cagnotte et le participant
+   - Entrer le montant
+
+## ?? Tests
+
+### Tester l'API avec la console
+
+1. Ouvrez la console du navigateur (F12)
+2. Chargez le script de test :
+   ```javascript
+   const script = document.createElement('script');
+   script.src = 'js/test-api.js';
+   document.head.appendChild(script);
+   ```
+3. Exécutez les tests :
+   ```javascript
+   testAPI.runFullTest()
+   ```
+
+### Tester avec Swagger
+
+Accédez à `https://localhost:7292/swagger` pour tester tous les endpoints interactivement.
+
+## ?? Endpoints API
+
+### Cagnottes
+- `GET /api/Cagnotte` - Liste toutes les cagnottes
+- `GET /api/Cagnotte/{id}` - Détails d'une cagnotte
+- `POST /api/Cagnotte` - Créer une cagnotte
+- `PUT /api/Cagnotte/{id}` - Modifier une cagnotte
+- `DELETE /api/Cagnotte/{id}` - Supprimer une cagnotte
+
+### Entreprises
+- `GET /api/Entreprise` - Liste toutes les entreprises
+- `GET /api/Entreprise/{id}` - Détails d'une entreprise
+- `POST /api/Entreprise` - Créer une entreprise
+- `DELETE /api/Entreprise/{id}` - Supprimer une entreprise
+
+### Participants
+- `GET /api/Participant` - Liste tous les participants
+- `GET /api/Participant/{id}` - Détails d'un participant
+- `POST /api/Participant` - Créer un participant
+- `PUT /api/Participant/{id}` - Modifier un participant
+- `DELETE /api/Participant/{id}` - Supprimer un participant
+
+### Participations
+- `GET /api/Participation` - Liste toutes les participations
+- `GET /api/Participation/{cagnotteId}/{participantId}` - Détails
+- `GET /api/Participation/cagnotte/{cagnotteId}` - Par cagnotte
+- `GET /api/Participation/participant/{participantId}` - Par participant
+- `POST /api/Participation` - Créer une participation
+- `PUT /api/Participation/{cagnotteId}/{participantId}` - Modifier
+- `DELETE /api/Participation/{cagnotteId}/{participantId}` - Supprimer
+
+## ?? Personnalisation
+
+### Modifier les couleurs
+
+Éditez `wwwroot/css/style.css` :
+
+```css
+:root {
+    --primary-color: #4f46e5;      /* Couleur principale */
+    --secondary-color: #10b981;    /* Couleur secondaire */
+    --danger-color: #ef4444;       /* Rouge */
+    --warning-color: #f59e0b;      /* Orange */
+}
+```
+
+### Modifier l'URL de l'API
+
+Éditez `wwwroot/js/api.js` :
+
+```javascript
+const API_BASE_URL = 'https://localhost:VOTRE_PORT/api';
+```
+
+## ?? Technologies Utilisées
+
+### Backend
+- **.NET 8** - Framework principal
+- **ASP.NET Core** - API REST
+- **Entity Framework Core** - ORM
+- **SQL Server** - Base de données
+- **AutoMapper** - Mapping DTOs
+
+### Frontend
+- **HTML5** - Structure
+- **CSS3** - Styles (Variables CSS, Grid, Flexbox)
+- **JavaScript (Vanilla)** - Logique
+- **Font Awesome** - Icônes
+- **Fetch API** - Appels HTTP
+
+## ?? Dépannage
+
+### Erreur de connexion à la base de données
+```
+Solution : Vérifiez que SQL Server est démarré
+          Modifiez la chaîne de connexion dans appsettings.json
+```
+
+### L'interface ne se charge pas
+```
+Solution : Vérifiez que dotnet run est actif
+          Vérifiez l'URL dans le navigateur
+          Consultez la console (F12) pour les erreurs
+```
+
+### Erreur CORS
+```
+Solution : CORS est déjà configuré dans Program.cs
+          Vérifiez l'URL de l'API dans js/api.js
+```
+
+## ?? Notes
+
+- Les migrations de base de données s'appliquent automatiquement au démarrage
+- Les données sont persistées dans SQL Server
+- L'interface se met à jour en temps réel après chaque opération
+- Toutes les dates sont au format ISO (YYYY-MM-DD)
+- Les montants sont en euros avec 2 décimales
+
+## ?? Sécurité (Production)
+
+Pour un déploiement en production :
+- ? Configurer CORS de manière restrictive
+- ? Ajouter une authentification/autorisation
+- ? Valider toutes les entrées
+- ? Utiliser HTTPS uniquement
+- ? Sécuriser la chaîne de connexion
+- ? Implémenter le logging
+
+## ?? Licence
+
+Ce projet est un exemple éducatif.
+
+## ????? Auteur
+
+Développé avec ?? pour la gestion de cagnottes participatives
+
+---
+
+**Bon développement ! ??**

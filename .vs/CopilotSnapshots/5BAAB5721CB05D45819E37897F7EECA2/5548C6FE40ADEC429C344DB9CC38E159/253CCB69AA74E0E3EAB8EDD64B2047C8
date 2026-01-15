@@ -1,0 +1,124 @@
+﻿@page "/create"
+@inject CagnotteService CagnotteService
+@inject NavigationManager Navigation
+
+<PageTitle>Créer une cagnotte</PageTitle>
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">🎁 Créer une nouvelle cagnotte</h3>
+                </div>
+                <div class="card-body">
+                    <EditForm Model="request" OnValidSubmit="HandleSubmit">
+                        <DataAnnotationsValidator />
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Titre de la cagnotte *</label>
+                            <InputText class="form-control" @bind-Value="request.Titre" placeholder="Ex: Cadeau pour Marie" />
+                            <ValidationMessage For="@(() => request.Titre)" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Description *</label>
+                            <InputTextArea class="form-control" rows="4" @bind-Value="request.Description" 
+                                         placeholder="Décrivez l'objectif de cette cagnotte..." />
+                            <ValidationMessage For="@(() => request.Description)" />
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Montant objectif (€) *</label>
+                                <InputNumber class="form-control" @bind-Value="request.MontantObjectif" />
+                                <ValidationMessage For="@(() => request.MontantObjectif)" />
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Date limite *</label>
+                                <InputDate class="form-control" @bind-Value="request.DateLimite" />
+                                <ValidationMessage For="@(() => request.DateLimite)" />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Votre nom (organisateur) *</label>
+                            <InputText class="form-control" @bind-Value="request.Organisateur" placeholder="Votre nom" />
+                            <ValidationMessage For="@(() => request.Organisateur)" />
+                        </div>
+
+                        @if (!string.IsNullOrEmpty(errorMessage))
+                        {
+                            <div class="alert alert-danger">
+                                <i class="bi bi-exclamation-triangle"></i> @errorMessage
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(successMessage))
+                        {
+                            <div class="alert alert-success">
+                                <i class="bi bi-check-circle"></i> @successMessage
+                            </div>
+                        }
+
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary" disabled="@isSubmitting">
+                                @if (isSubmitting)
+                                {
+                                    <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                                }
+                                <i class="bi bi-save"></i> Créer la cagnotte
+                            </button>
+                            <button type="button" class="btn btn-secondary" @onclick="Cancel">
+                                <i class="bi bi-x-circle"></i> Annuler
+                            </button>
+                        </div>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private CreateCagnotteRequest request = new()
+    {
+        DateLimite = DateTime.Now.AddMonths(1)
+    };
+    
+    private bool isSubmitting = false;
+    private string? errorMessage;
+    private string? successMessage;
+
+    private async Task HandleSubmit()
+    {
+        isSubmitting = true;
+        errorMessage = null;
+        successMessage = null;
+
+        try
+        {
+            var result = await CagnotteService.CreateCagnotteAsync(request);
+            if (result != null)
+            {
+                successMessage = "Cagnotte créée avec succès ! Redirection...";
+                await Task.Delay(1500);
+                Navigation.NavigateTo($"/cagnotte/{result.Id}");
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Une erreur est survenue: {ex.Message}";
+        }
+        finally
+        {
+            isSubmitting = false;
+        }
+    }
+
+    private void Cancel()
+    {
+        Navigation.NavigateTo("/");
+    }
+}

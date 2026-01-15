@@ -1,0 +1,58 @@
+﻿using AutoMapper;
+using Cagnotte.Data.Repositories;
+using Cagnotte.Domain.DTOs.Participation;
+using Cagnotte.Domain.Entites;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace Cagnotte.Services
+{
+    public class ParticipationService : IParticipationService
+    {
+        private readonly IParticipationRepository _repo;
+        private readonly IMapper _mapper;
+
+        public ParticipationService(IParticipationRepository repo, IMapper mapper)
+        {
+            _repo = repo;
+            _mapper = mapper;
+        }
+
+        public async Task<IEnumerable<ParticipationDto>> GetAllAsync()
+        {
+            var list = await _repo.GetAllAsync();
+            return _mapper.Map<IEnumerable<ParticipationDto>>(list);
+        }
+
+        public async Task<ParticipationDto?> GetByIdAsync(int cagnotteId, int participantId)
+        {
+            var entity = await _repo.GetByIdAsync(cagnotteId, participantId);
+            return _mapper.Map<ParticipationDto>(entity);
+        }
+
+        public async Task<ParticipationDto> CreateAsync(CreateParticipationDto dto)
+        {
+            var entity = _mapper.Map<Participation>(dto);
+            await _repo.AddAsync(entity);
+
+            return _mapper.Map<ParticipationDto>(entity);
+        }
+
+        public async Task<bool> DeleteAsync(int cagnotteId, int participantId)
+        {
+            return await _repo.DeleteAsync(cagnotteId, participantId);
+        }
+
+        public async Task<IEnumerable<ParticipationDto>> GetByCagnotteIdAsync(int cagnotteId)
+        {
+            var list = await _repo.GetByCagnotteIdAsync(cagnotteId);
+            return _mapper.Map<IEnumerable<ParticipationDto>>(list);
+        }
+
+        public async Task<IEnumerable<ParticipationDto>> GetByParticipantIdAsync(int participantId)
+        {
+            var list = await _repo.GetByParticipantIdAsync(participantId);
+            return _mapper.Map<IEnumerable<ParticipationDto>>(list);
+        }
+    }
+}

@@ -1,0 +1,6 @@
+@CagnotteParticipativeExam_HostAddress = http://localhost:5184
+
+GET {{CagnotteParticipativeExam_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

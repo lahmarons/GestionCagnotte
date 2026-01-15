@@ -1,0 +1,151 @@
+﻿@page "/"
+@inject CagnotteService CagnotteService
+@inject NavigationManager Navigation
+@using CagnotteParticipative.UI.Models
+@using CagnotteParticipative.UI.Services
+
+<PageTitle>Cagnottes Participatives</PageTitle>
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>🎁 Cagnottes Participatives</h1>
+        <button class="btn btn-primary" @onclick="NavigateToCreate">
+            <i class="bi bi-plus-circle"></i> Créer une cagnotte
+        </button>
+    </div>
+
+    @if (isLoading)
+    {
+        <div class="text-center">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Chargement...</span>
+            </div>
+            <p class="mt-2">Chargement des cagnottes...</p>
+        </div>
+    }
+    else if (cagnottes == null || !cagnottes.Any())
+    {
+        <div class="alert alert-info">
+            <i class="bi bi-info-circle"></i> Aucune cagnotte disponible pour le moment.
+            <button class="btn btn-sm btn-primary ms-3" @onclick="NavigateToCreate">
+                Créer la première cagnotte
+            </button>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var cagnotte in cagnottes)
+            {
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">@cagnotte.Titre</h5>
+                            <p class="card-text text-muted">@cagnotte.Description</p>
+                            
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="text-muted">Progression</span>
+                                    <span class="fw-bold">@GetPercentage(cagnotte)%</span>
+                                </div>
+                                <div class="progress" style="height: 25px;">
+                                    <div class="progress-bar @GetProgressBarClass(cagnotte)" 
+                                         role="progressbar" 
+                                         style="width: @GetPercentage(cagnotte)%"
+                                         aria-valuenow="@GetPercentage(cagnotte)" 
+                                         aria-valuemin="0" 
+                                         aria-valuemax="100">
+                                        @GetPercentage(cagnotte)%
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between mt-2">
+                                    <span class="text-success fw-bold">@cagnotte.MontantCollecte.ToString("C")</span>
+                                    <span class="text-muted">sur @cagnotte.MontantObjectif.ToString("C")</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-2">
+                                <small class="text-muted">
+                                    <i class="bi bi-person"></i> Organisé par <strong>@cagnotte.Organisateur</strong>
+                                </small>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <small class="text-muted">
+                                    <i class="bi bi-calendar"></i> Date limite: <strong>@cagnotte.DateLimite.ToString("dd/MM/yyyy")</strong>
+                                </small>
+                            </div>
+
+                            @if (cagnotte.EstActive)
+                            {
+                                <span class="badge bg-success mb-2">✓ Active</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary mb-2">⊗ Terminée</span>
+                            }
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100" @onclick="() => ViewDetails(cagnotte.Id)">
+                                <i class="bi bi-eye"></i> Voir les détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    private List<CagnotteDto>? cagnottes;
+    private bool isLoading = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadCagnottes();
+    }
+
+    private async Task LoadCagnottes()
+    {
+        isLoading = true;
+        try
+        {
+            cagnottes = await CagnotteService.GetAllCagnottesAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erreur: {ex.Message}");
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private int GetPercentage(CagnotteDto cagnotte)
+    {
+        if (cagnotte.MontantObjectif == 0) return 0;
+        var percentage = (int)((cagnotte.MontantCollecte / cagnotte.MontantObjectif) * 100);
+        return Math.Min(percentage, 100);
+    }
+
+    private string GetProgressBarClass(CagnotteDto cagnotte)
+    {
+        var percentage = GetPercentage(cagnotte);
+        if (percentage >= 100) return "bg-success";
+        if (percentage >= 75) return "bg-info";
+        if (percentage >= 50) return "bg-warning";
+        return "bg-danger";
+    }
+
+    private void NavigateToCreate()
+    {
+        Navigation.NavigateTo("/create");
+    }
+
+    private void ViewDetails(int id)
+    {
+        Navigation.NavigateTo($"/cagnotte/{id}");
+    }
+}
